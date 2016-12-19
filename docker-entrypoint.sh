@@ -12,7 +12,7 @@ fi
 if [ -v SENTINEL ]; then
 	echo "sentinel monitor primary $SENTINEL 6379 2" >> /opt/redis.conf
 	echo "sentinel down-after-milliseconds primary 5000" >> /opt/redis.conf
-	echo "sentinel failover-timeout primary 180000" >> /opt/redis.conf
+	echo "sentinel failover-timeout primary 10000" >> /opt/redis.conf
 	echo "sentinel parallel-syncs primary 1" >> /opt/redis.conf
 
 	set -- $@ --port 26379 --sentinel
