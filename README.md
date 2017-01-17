@@ -8,4 +8,4 @@ Redis Version: **3.2**
 
 ## Running the cluster
 
-    kubernetes create -f primary.yml -f secondard.yml -f sentinal.yml
+    kubectl create -f primary.yml -f secondary.yml -f sentinel.yml
