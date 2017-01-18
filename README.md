@@ -1,6 +1,7 @@
 # Redis as Stateful Set With Sentinel
 
 Kubernetes Version: **1.5.2**
+
 Redis Version: **3.2**
 
 ## Building the Docker image
