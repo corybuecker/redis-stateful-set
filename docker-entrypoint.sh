@@ -5,8 +5,8 @@ set -x
 
 set -- $(which redis-server) /opt/redis.conf
 
-if [ -v REPLICAOF ] && [ ! -v SENTINEL ]; then
-  set -- $@ --slaveof $REPLICAOF 6379
+if [ -v REPLICA ] && [ ! -v SENTINEL ]; then
+  set -- $@ --slaveof $(redis-cli -h redis-sentinel -p 26379 --raw sentinel get-master-addr-by-name primary | sed -n 1p) 6379
 fi
 
 if [ -v SENTINEL ]; then

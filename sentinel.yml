@@ -8,7 +8,6 @@ spec:
   ports:
   - port: 26379
     name: redis-sentinel
-  clusterIP: None
   selector:
     app: redis-sentinel
 ---
@@ -31,7 +30,7 @@ spec:
         imagePullPolicy: Always
         env:
         - name: SENTINEL
-          value: redis-primary-0.redis-primary
+          value: redis-primary
         ports:
         - containerPort: 26379
           name: redis-sentinel
